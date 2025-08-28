@@ -1,0 +1,120 @@
+:root{
+  --bg: #0b1220;
+  --bg-2: #0f172a;
+  --card: #0f1b31;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+  --brand: #60a5fa;
+  --brand-2: #22d3ee;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(96,165,250,.08), transparent 60%),
+              radial-gradient(900px 500px at 90% 5%, rgba(34,211,238,.08), transparent 60%),
+              linear-gradient(180deg, var(--bg), var(--bg-2));
+  color: var(--text);
+  font-feature-settings: "liga" on, "calt" on;
+}
+
+.navbar{
+  background: rgba(11,18,32,.6);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(148,163,184,.2);
+}
+
+.hero{
+  position: relative;
+  padding: 6rem 0 4rem;
+}
+
+.hero::after{
+  content:""; 
+  position:absolute; 
+  inset:0; 
+  pointer-events:none;
+  background: radial-gradient(600px 300px at 70% 20%, rgba(96,165,250,.15), transparent 60%);
+}
+
+.avatar{
+  width: 160px; 
+  height:160px; 
+  object-fit:cover; 
+  border-radius:50%;
+  border: 3px solid rgba(96,165,250,.6);
+  box-shadow: 0 10px 40px rgba(34,211,238,.25);
+}
+
+.tag{
+  display:inline-block; 
+  padding:.35rem .65rem; 
+  border-radius:999px; 
+  font-size:.85rem;
+  color:#0b1220; 
+  background:linear-gradient(90deg,var(--brand),var(--brand-2)); 
+  font-weight:600;
+}
+
+.section-title{
+  font-weight:800; 
+  letter-spacing:.3px;
+}
+
+.card{
+  background-color: var(--card); 
+  border:1px solid rgba(148,163,184,.18);
+}
+
+a{ 
+  color: var(--brand); 
+}
+a:hover{ 
+  color: var(--brand-2); 
+}
+
+.footer{ 
+  border-top:1px solid rgba(148,163,184,.18); 
+}
+
+.skill-badge{
+  border:1px solid rgba(148,163,184,.25);
+  background:rgba(148,163,184,.08);
+  color:var(--text);
+}
+
+.project-card img{ 
+  object-fit:cover; 
+  height: 160px; 
+}
+
+/* ==========================
+Smoother animated background
+========================== */
+body::before{
+content: "";
+position: fixed;
+inset: -20% -20% -20% -20%;
+z-index: 1;
+pointer-events: none;
+background:
+radial-gradient(40% 35% at 15% 20%, rgba(96,165,250,.12), transparent 70%),
+radial-gradient(35% 30% at 85% 15%, rgba(34,211,238,.10), transparent 70%),
+radial-gradient(45% 40% at 70% 80%, rgba(59,130,246,.08), transparent 70%),
+radial-gradient(50% 45% at 20% 85%, rgba(20,184,166,.08), transparent 70%);
+filter: blur(10px);
+animation: drift 120s ease-in-out infinite alternate;
+}
+
+
+@keyframes drift{
+0%{ transform: translate3d(0,0,0) scale(1); }
+50%{ transform: translate3d(-2%, 2%, 0) scale(1.02); }
+100%{ transform: translate3d(2%, -2%, 0) scale(1.03); }
+}
+
+.card-body{
+    color: white;
+}
